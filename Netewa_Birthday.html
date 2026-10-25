@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff4f8">
+<title>Happy Birthday, My Princess ♡</title>
+<style>
+:root{--pink:#f2a8c4;--deep:#bd5c86;--white:#fffafd;--ink:#75445a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:Georgia,serif;text-align:center;background:radial-gradient(circle at 50% 0,#fff 0,#fff2f7 42%,#fbdce8 100%)}
+main{position:relative;z-index:1;max-width:650px;margin:auto;padding:55px 20px 40px}
+h1{font-weight:normal;font-size:clamp(2.5rem,9vw,4.6rem);line-height:1.1;color:var(--deep);margin:20px 0}
+p{line-height:1.8}
+.kicker{font:11px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#b56a88}
+.heart{color:#e879a5;display:inline-block;animation:beat 1.6s infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+.rose{position:fixed;z-index:0;opacity:.2;font-size:30px;animation:float 9s ease-in-out infinite}
+.r1{top:12%;left:5%}.r2{top:33%;right:6%;animation-delay:2s}.r3{bottom:10%;left:9%;animation-delay:4s}.r4{bottom:17%;right:10%;animation-delay:1s}
+@keyframes float{50%{transform:translateY(-18px) rotate(12deg)}}
+.card{margin:28px auto;padding:25px 23px;border:1px solid #efbad0;border-radius:24px;background:#ffffffb8;box-shadow:0 12px 35px #c66d8e18}
+h2{font-weight:normal;color:var(--deep);margin:0 0 12px;font-size:1.7rem}
+.letter{font-size:1.06rem}
+.signature{font-style:italic;text-align:right;color:#b4557d;margin-top:16px}
+button{border:0;border-radius:30px;padding:13px 22px;background:var(--pink);color:#fff;font-size:1rem;cursor:pointer;box-shadow:0 5px 15px #d8799d35}
+button:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+.gift{font-size:68px;cursor:pointer;display:inline-block;transition:transform .3s;user-select:none}
+.gift:hover{transform:scale(1.08) rotate(-5deg)}
+.hidden{display:none!important}
+.secret{margin-top:18px;padding:16px;border:1px dashed #e39ab8;border-radius:15px;background:#fff2f7;color:#a34270;font-size:1.4rem}
+footer{font:12px Arial,sans-serif;color:#b27a91;margin-top:32px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="rose r1" aria-hidden="true">🌹</div><div class="rose r2" aria-hidden="true">♡</div>
+<div class="rose r3" aria-hidden="true">🌸</div><div class="rose r4" aria-hidden="true">🌹</div>
+<main>
+  <div class="kicker">A little page made just for you</div>
+  <h1>Happy Birthday<br>My Princess <span class="heart">♡</span></h1>
+  <p>To Netewa — the prettiest girl in the world. 🌷</p>
+  <section class="card">
+    <h2>To My Princess</h2>
+    <p class="letter">Happy birthday, my beautiful Netewa. ♡<br><br>
+    I hope your day is as lovely as your smile and filled with little moments that make you happy. Keep shining, my princess. You’re one of a kind.</p>
+    <div class="signature">With love, Abdulaziz ♡</div>
+  </section>
+  <section class="card">
+    <h2>A little gift for you</h2>
+    <p>Tap the gift, princess 🎀</p>
+    <div class="gift" id="gift" role="button" tabindex="0" aria-label="Open gift">🎁</div>
+    <p id="giftMessage" class="hidden">A wish for your happiness, today and always. 💗</p>
+  </section>
+  <section class="card">
+    <h2>One tiny secret…</h2>
+    <button id="secretButton" type="button">Open my secret 😇</button>
+    <div id="secret" class="secret hidden">Ka laqake😇</div>
+  </section>
+  <footer>Made with love, just for Netewa 🌹</footer>
+</main>
+<script>
+const gift=document.getElementById('gift'), giftMessage=document.getElementById('giftMessage');
+function openGift(){giftMessage.classList.remove('hidden');gift.textContent='💝';}
+gift.addEventListener('click',openGift);
+gift.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift();}});
+document.getElementById('secretButton').addEventListener('click',()=>{
+ const secret=document.getElementById('secret');secret.classList.toggle('hidden');
+ document.getElementById('secretButton').textContent=secret.classList.contains('hidden')?'Open my secret 😇':'A secret just for you ♡';
+});
+</script>
+</body>
+</html>
